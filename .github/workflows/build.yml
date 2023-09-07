@@ -22,4 +22,10 @@ jobs:
 
     - name: Test Build
       run: npm run build
+
+    - name: upload build artifacts
+      uses: actions/upload-artifacts@v2
+      with:
+        name: my-artifact-v1
+        path: ./BuildArtifacts
       
