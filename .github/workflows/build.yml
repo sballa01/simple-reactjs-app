@@ -1,0 +1,25 @@
+name: Build and Test
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build React app
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout-code
+      uses: actions/checkout@v2
+    
+    - name: setup node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.4.1'
+    
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Test Build
+      run: npm run build
+      
